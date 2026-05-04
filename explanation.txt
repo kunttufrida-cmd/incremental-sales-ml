@@ -1,0 +1,21 @@
+This script demonstrates a basic implementation of an XGBoost regression model.
+- Synthetic time series data is generated with a promotion feature
+- The model is trained using XGBRegressor
+- Predictions are evaluated using MAE and RMSE
+
+
+explanation of this codeline ->sales = 100 + 0.5 * time + 20 * promotion + np.random.normal(0, 5, n)
+-100 = perusmyynti
+-0.5 * time = pieni kasvu ajan myötä
+-20 * promotion = kampanja nostaa myyntiä paljon
+-noise = satunnaista vaihtelua
+
+-x=syötteet (input) [aika,kampanja]
+-y=se mitä ennustetaan [myynti]
+
+-80% of data to training
+-20% of data to testing
+
+model learns -> jos kampanja = 1 → myynti kasvaa
+jos aika kasvaa → myynti kasvaa vähän
+model tries to predict -> paljonko myynti on testidatassa
